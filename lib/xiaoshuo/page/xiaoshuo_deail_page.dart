@@ -162,12 +162,12 @@ class _XiaoShuoDetailPageState extends State<XiaoShuoDetailPage> {
                                           Text("或者保存到相册分享")
                                         ],
                                       ),
-                                      QrImage(
-                                        padding: EdgeInsets.all(7),
-                                        backgroundColor: Colors.white,
-                                        data: "https://crawel.lppfk.top/static/index.html",
-                                        size: 100,
-                                      ),
+                                      // QrImage(
+                                      //   padding: EdgeInsets.all(7),
+                                      //   backgroundColor: Colors.white,
+                                      //   data: "https://crawel.lppfk.top/static/index.html",
+                                      //   size: 100,
+                                      // ),
                                     ],
                                   ))
                                 ],

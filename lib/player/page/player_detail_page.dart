@@ -227,12 +227,12 @@ class _PlayerDetailPageState extends State<PlayerDetailPage> with WidgetsBinding
                                           const Text("或者保存到相册分享")
                                         ],
                                       ),
-                                      QrImage(
-                                        padding: const EdgeInsets.all(7),
-                                        backgroundColor: Colors.white,
-                                        data: "https://crawel.lppfk.top/static/index.html",
-                                        size: 100,
-                                      ),
+                                      // QrImage(
+                                      //   padding: const EdgeInsets.all(7),
+                                      //   backgroundColor: Colors.white,
+                                      //   data: "https://crawel.lppfk.top/static/index.html",
+                                      //   size: 100,
+                                      // ),
                                     ],
                                   ))
                                 ],
@@ -350,35 +350,35 @@ class _PlayerDetailPageState extends State<PlayerDetailPage> with WidgetsBinding
   searchDialog() {
     // 提示是否继续搜索
     appStateProvider!.setSearchText("点击开始搜索设备");
-    showDialog(
-        context: context,
-        builder: (_) => Selector<AppStateProvider, String>(
-            builder: (_, words, __) {
-              return FlareGiffyDialog(
-                flarePath: 'assets/images/space_demo.flr',
-                flareAnimation: 'loading',
-                title: Text(words, textAlign: TextAlign.center, style: const TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600)),
-                description: const Text(
-                  '请打开相关设备后点击重新搜索',
-                  textAlign: TextAlign.center,
-                ),
-                entryAnimation: EntryAnimation.BOTTOM,
-                buttonOkText: const Text(
-                  "重新搜索",
-                ),
-                buttonCancelText: const Text(
-                  "停止搜索",
-                ),
-                onOkButtonPressed: () async {
-                  await appStateProvider!.searchDlna(1);
-                },
-                onCancelButtonPressed: () async {
-                  Navigator.pop(context);
-                  await appStateProvider!.dlnaManager.stop();
-                },
-              );
-            },
-            selector: (_, store) => store.searchText));
+    // showDialog(
+    //     context: context,
+    //     builder: (_) => Selector<AppStateProvider, String>(
+    //         builder: (_, words, __) {
+    //           return FlareGiffyDialog(
+    //             flarePath: 'assets/images/space_demo.flr',
+    //             flareAnimation: 'loading',
+    //             title: Text(words, textAlign: TextAlign.center, style: const TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600)),
+    //             description: const Text(
+    //               '请打开相关设备后点击重新搜索',
+    //               textAlign: TextAlign.center,
+    //             ),
+    //             entryAnimation: EntryAnimation.BOTTOM,
+    //             buttonOkText: const Text(
+    //               "重新搜索",
+    //             ),
+    //             buttonCancelText: const Text(
+    //               "停止搜索",
+    //             ),
+    //             onOkButtonPressed: () async {
+    //               await appStateProvider!.searchDlna(1);
+    //             },
+    //             onCancelButtonPressed: () async {
+    //               Navigator.pop(context);
+    //               await appStateProvider!.dlnaManager.stop();
+    //             },
+    //           );
+    //         },
+    //         selector: (_, store) => store.searchText));
   }
 
   Offset? _initialSwipeOffset;
